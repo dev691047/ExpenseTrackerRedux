@@ -21,6 +21,7 @@ const Login = () => {
         returnSecureToken: true,
       }
     );
+    localStorage.setItem("tokenId", res.data.idToken);
     console.log(res);
     alert("login successful");
     emailInputRef.current.value = null;

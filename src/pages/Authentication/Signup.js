@@ -22,6 +22,7 @@ const Signup = () => {
       }
     );
     console.log(res);
+    localStorage.setItem("tokenId", res.data.idToken);
     alert("signup successful");
     emailInputRef.current.value = null;
     passwordInputRef.current.value = null;
