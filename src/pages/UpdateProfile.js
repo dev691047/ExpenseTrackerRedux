@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import axios from "axios";
+import { Layout } from "../component/Layout";
 const UpdateProfile = () => {
   const changeName = useRef();
   const changeUrl = useRef();
@@ -34,6 +35,21 @@ const UpdateProfile = () => {
     changeUrl.current.value = res.data.users[0].photoUrl;
   };
 
+  const verifyEmailHander = async () => {
+    try {
+      const res = await axios.post(
+        "https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyCga42fkHMcRKhgmjFJXpjEMCd2G7sIOA8",
+        {
+          requestType: "String",
+          idToken: token,
+        }
+      );
+      console.log(res);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   return (
     <>
       <div
@@ -44,8 +60,12 @@ const UpdateProfile = () => {
           backgroundColor: "grey",
         }}
       >
-        <p>Winners never quit ,Quitters never win</p>
-        <p>A higher profile has higher chance of selection</p>
+        <p>
+          Winners never quit ,Quitters never win. A higher profile has higher
+          chance of selection
+        </p>
+
+        <Layout />
       </div>
 
       <form style={{ width: "800px", margin: "auto" }} onSubmit={submitHandler}>
@@ -96,6 +116,7 @@ const UpdateProfile = () => {
       >
         get user info
       </button>
+      <button onClick={verifyEmailHander}>Verify email</button>
     </>
   );
 };

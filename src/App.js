@@ -4,6 +4,7 @@ import Signup from "./pages/Authentication/Signup";
 import { Home } from "./pages/Home";
 import Login from "./pages/Authentication/Login";
 import UpdateProfile from "./pages/UpdateProfile";
+
 function App() {
   return (
     <>

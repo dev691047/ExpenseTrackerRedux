@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Layout } from "../component/Layout";
 
 export const Home = () => {
   return (
@@ -12,7 +13,11 @@ export const Home = () => {
       }}
     >
       <h2
-        style={{ color: "black", display: "inline-block", textAlign: "center" }}
+        style={{
+          color: "black",
+          display: "inline-block",
+          textAlign: "center",
+        }}
       >
         Welcome
       </h2>
@@ -21,6 +26,7 @@ export const Home = () => {
         <Link style={{ color: "red" }} to="/updateProfile">
           _now!
         </Link>
+        <Layout />
       </h3>
     </div>
   );
