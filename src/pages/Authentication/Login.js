@@ -47,7 +47,15 @@ const Login = () => {
               ref={passwordInputRef}
             />
           </div>
-          <button type="submit">Login</button>
+          <button type="submit" style={{ cursor: "pointer" }}>
+            Login
+          </button>
+          <Link
+            style={{ color: "orange", cursor: "pointer", display: "block" }}
+            to="/resetPassword"
+          >
+            Forget Password
+          </Link>
           <div className={classes.actions}>
             <button
               type="button"
