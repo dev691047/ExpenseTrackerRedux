@@ -2,12 +2,16 @@ import React, { useRef, useState } from "react";
 import classes from "./AuthPage.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { authActions } from "../../store_redux/store";
+import { useDispatch, useSelector } from "react-redux";
+
 const Login = () => {
   const [isLogin, setIsLogin] = useState(false);
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
   const navigate = useNavigate();
   const switchAuthModeHandler = () => {};
+  const dispatch = useDispatch();
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -22,8 +26,14 @@ const Login = () => {
       }
     );
     localStorage.setItem("tokenId", res.data.idToken);
-    console.log(res);
-    alert("login successful");
+    localStorage.setItem("userId", res.data.localId);
+
+    const obj = {
+      token: res.data.idToken,
+      userId: res.data.localId,
+    };
+    dispatch(authActions.login(obj));
+
     emailInputRef.current.value = null;
     passwordInputRef.current.value = null;
     navigate("/home");
