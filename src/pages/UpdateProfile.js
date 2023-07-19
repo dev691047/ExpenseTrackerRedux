@@ -1,7 +1,9 @@
 import React, { useRef } from "react";
 import axios from "axios";
 import { Layout } from "../component/Layout";
+import { Link, useNavigate } from "react-router-dom";
 const UpdateProfile = () => {
+  const navigate = useNavigate();
   const changeName = useRef();
   const changeUrl = useRef();
   const token = localStorage.getItem("tokenId");
@@ -64,8 +66,21 @@ const UpdateProfile = () => {
           Winners never quit ,Quitters never win. A higher profile has higher
           chance of selection
         </p>
-
         <Layout />
+      </div>
+      <div
+        style={{
+          color: "red",
+          cursor: "pointer",
+          float: "right",
+          fontWeight: "600",
+          marginRight: "10px",
+          fontSize: "20px",
+          textDecoration: "underline",
+        }}
+        onClick={() => navigate("/home")}
+      >
+        Go Back
       </div>
 
       <form style={{ width: "800px", margin: "auto" }} onSubmit={submitHandler}>
@@ -104,7 +119,8 @@ const UpdateProfile = () => {
       <button
         style={{
           display: "block",
-
+          position: "relative",
+          left: "-308px",
           margin: "20px  868px",
           border: "none",
           width: "100px",
@@ -116,7 +132,7 @@ const UpdateProfile = () => {
       >
         get user info
       </button>
-      <button onClick={verifyEmailHander}>Verify email</button>
+      {/* <button onClick={verifyEmailHander}>Verify email</button> */}
     </>
   );
 };

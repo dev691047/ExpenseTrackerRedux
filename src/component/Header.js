@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { authActions } from "../store_redux/store";
 import { useDispatch, useSelector } from "react-redux";
+import { listActions } from "../store_redux/store";
 
 export const Header = () => {
   const navigate = useNavigate();
@@ -10,6 +11,8 @@ export const Header = () => {
     dispatch(authActions.logout());
     localStorage.clear();
     navigate("/login");
+    const emptyArr = [];
+    dispatch(listActions.setNull(emptyArr));
   };
   return (
     <div>

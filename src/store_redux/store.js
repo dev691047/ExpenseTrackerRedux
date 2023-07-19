@@ -33,9 +33,24 @@ const listItemsSlice = createSlice({
   name: "listItems",
   initialState: initialListState,
   reducers: {
+    initialiseItems(state, action) {
+      console.log(action.payload);
+      state.items = action.payload;
+    },
     addItems(state, action) {
       state.items = [...state.items, action.payload];
-      console.log(state.items);
+      // console.log(state.items);
+    },
+    removeItem(state, action) {
+      // console.log(action.payload);
+      state.items = action.payload;
+    },
+    editItem(state, action) {
+      console.log(action.payload);
+      state.items = action.payload;
+    },
+    setNull(state, action) {
+      state.items = action.payload;
     },
   },
 });

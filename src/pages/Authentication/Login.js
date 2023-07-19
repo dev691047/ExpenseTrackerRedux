@@ -57,11 +57,26 @@ const Login = () => {
               ref={passwordInputRef}
             />
           </div>
-          <button type="submit" style={{ cursor: "pointer" }}>
-            Login
+          <button
+            type="submit"
+            style={{
+              cursor: "pointer",
+              width: "100px",
+              height: "30px",
+              color: "blue",
+              fontWeight: "600",
+            }}
+          >
+            LOGIN
           </button>
           <Link
-            style={{ color: "orange", cursor: "pointer", display: "block" }}
+            style={{
+              color: "orange",
+              cursor: "pointer",
+              display: "block",
+              width: "150px",
+              margin: "auto",
+            }}
             to="/resetPassword"
           >
             Forget Password

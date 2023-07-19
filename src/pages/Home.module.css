@@ -24,6 +24,7 @@
   margin: 0px;
   letter-spacing: 5px;
 }
+
 .editDiv {
   margin: 200px auto;
   border: none;
@@ -54,10 +55,47 @@
 .form {
   text-align: center;
   padding: 30px;
-  box-shadow: 5px 5px 10px grey;
+  box-shadow: 0px 0px 20px rgb(209, 209, 209);
   margin: 80px;
   border-radius: 10px;
 }
+.list {
+  width: 900px;
+}
+@media only screen and (max-width: 600px) {
+  .list {
+    width: 94%;
+  }
+  .Icon {
+    font-size: 30px;
+    margin-top: 10px;
+    margin-right: 50px;
+  }
+  .Header {
+    height: 120px;
+  }
+  .h3 {
+    font-size: 15px;
+    margin-top: 15px;
+  }
+  .mainCont {
+    flex-direction: column;
+
+    width: 100%;
+  }
+  .PieChart {
+    width: 100%;
+  }
+  .form {
+    margin: 10px auto;
+    /* padding: 0; */
+    width: 70%;
+  }
+}
+.PieChart {
+  width: 400px;
+}
+
 .formBtn {
   width: 70px;
   border: none;
